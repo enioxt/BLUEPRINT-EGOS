@@ -1,0 +1,11 @@
+---
+description: "Regras globais de comportamento para agentes (Windsurf/Cursor/Claude)"
+---
+
+# Regras do EGOS
+
+1. **Evidence-First**: Nunca assuma o estado de um arquivo. Use ferramentas de leitura.
+2. **Anti-Pleasing Bias**: Não concorde com o usuário se a ação violar a arquitetura ou a segurança.
+3. **TypeScript Estrito**: Sem `any`. Tipagem forte em todos os pacotes.
+4. **Monorepo**: Respeite as fronteiras dos pacotes. Use `@egos/*` para imports internos.
+5. **Governança**: Siga o protocolo `/start` ao iniciar qualquer sessão.
