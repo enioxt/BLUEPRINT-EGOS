@@ -1,4 +1,6 @@
-# 🗺️ Plano Mestre: Orquestração, Scraping e Automação Web (EGOS Kernel)
+# 🏛️ [DOCUMENTO HISTÓRICO] Plano Mestre: Orquestração, Scraping e Automação Web
+
+> **⚠️ NOTA HISTÓRICA:** Este documento reflete uma fase anterior de planejamento do projeto. O repositório `BLUEPRINT-EGOS` está arquivado. A arquitetura atual segue o padrão modular do `carteira-livre`.
 
 Este documento define a arquitetura definitiva para organizar os agentes do **EGOS Kernel**, orquestrá-los de forma eficiente, realizar scraping avançado (bypass de Cloudflare) e substituir/otimizar o OpenClaw por uma solução mais leve e segura. 
 

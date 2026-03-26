@@ -1,0 +1,12 @@
+{
+  "name": "@enioxt/ai-rules",
+  "version": "1.0.0",
+  "description": "Regras padronizadas e meta-prompts para IAs no ecossistema EGOS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["ai", "prompts", "egos", "rules"],
+  "author": "enioxt",
+  "license": "MIT"
+}

@@ -1,4 +1,6 @@
-# EGOS System Map
+# 🏛️ [DOCUMENTO HISTÓRICO] EGOS System Map
+
+> **⚠️ NOTA HISTÓRICA:** Este documento reflete uma fase anterior de design do projeto. O repositório `BLUEPRINT-EGOS` está arquivado. A arquitetura atual segue o padrão modular do `carteira-livre`.
 
 > Mapa de Arquitetura do EGOS (Adaptive Atomic Retrieval)
 

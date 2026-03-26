@@ -1,9 +1,11 @@
 ---
 id: activation.egos-governance
-name: "EGOS Activation Governance Meta-Prompt"
+name: "[ARCHIVED] EGOS Activation Governance Meta-Prompt"
 version: "1.1.0"
 date: "2026-03-25"
 origin: "Kernel EGOS + .guarani + evidence-first + ATRiAN honesty discipline"
+status: "archived"
+note: "Este repositório está arquivado. As regras de engajamento migraram para o pacote @enioxt/ai-rules no monorepo egos."
 triggers:
   - "ativar egos"
   - "/start"

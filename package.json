@@ -1,5 +1,6 @@
 {
-  "name": "react-example",
+  "name": "blueprint-egos-archived",
+  "description": "[ARCHIVED] Repositório histórico de Design, Arquitetura e Filosofia do ecossistema EGOS.",
   "private": true,
   "version": "0.0.0",
   "type": "module",

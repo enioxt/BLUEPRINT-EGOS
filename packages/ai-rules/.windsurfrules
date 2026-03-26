@@ -1,0 +1,8 @@
+# EGOS AI Rules (Pragmatic Edition)
+
+- **Foco Absoluto:** Time-to-Market, Receita, Compliance Brasil.
+- **Zero Filosofia:** Sem manifestos, sem "Mycelium", sem "ATRiAN ethics" no código.
+- **Arquitetura:** Monorepo (Turborepo + pnpm). Acoplamento fraco.
+- **Governança:** A IA escreve o código, o GitHub Actions (CI) valida.
+- **Ferramentas:** Use o que já existe (NPM, GitHub Actions). Não reinvente a roda.
+- **Produto Flagship:** Todo esforço deve ser direcionado para o MVP de auditoria/compliance de dados públicos brasileiros.

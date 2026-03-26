@@ -1,38 +1,37 @@
-# EGOS Kernel — A Central de Comando
+# 🏛️ BLUEPRINT-EGOS (Whitepaper & Manifesto)
 
-**Aberto, modular e vivo, no estado real em que existe agora.**
+> **⚠️ AVISO IMPORTANTE: ESTE REPOSITÓRIO ESTÁ ARQUIVADO / SOMENTE LEITURA.**
+> 
+> Este é o repositório de **Design, Arquitetura e Filosofia** do ecossistema EGOS. Ele serve como nosso quadro branco histórico e manifesto fundacional. 
+> **O código de produção, laboratórios e refatorações NÃO vivem mais aqui.**
 
-O **EGOS Kernel** é o orquestrador central e a interface visual de todo o ecossistema EGOS. Ele não é apenas um dashboard, mas o "Cérebro" que conecta, gerencia e roteia tarefas para agentes especializados, ferramentas de OSINT e bancos de memória.
+Se você é um novo desenvolvedor ou uma IA tentando entender *"Por que o EGOS funciona assim?"*, você está no lugar certo. Leia os documentos aqui para entender a fundação teórica.
 
-## 🧠 A Arquitetura do Ecossistema
+Para escrever código, vá para os repositórios ativos abaixo.
 
-O Kernel atua como o maestro para os seguintes agentes e módulos:
+---
 
-- **Forja:** A fábrica de agentes e geradora de código.
-- **852:** O chatbot seguro e anônimo (DashScope/OpenRouter).
-- **Gem Hunter:** O agente de OSINT, scraping e descoberta (integrado com `brazil-visible-sdk` e `open-tender-watch`).
-- **ATRiAN:** O firewall ético e filtro de realidade (Zero Trust).
-- **Cortex:** A memória de longo prazo (Vector DB / pgvector).
-- **IPED (Integração Futura):** Análise forense profunda de dados coletados.
+## 🚀 Onde a Ação Acontece (Repositórios Ativos)
 
-## 🛠️ O Que o Kernel Faz?
+Nós evoluímos de um "Sistema Nervoso Central Místico" para uma **Tríade Pragmática de Desenvolvimento**:
 
-1. **Orquestração de Agentes:** Recebe inputs complexos e divide em sub-tarefas para os agentes corretos.
-2. **Automação Web Segura:** Substitui o antigo OpenClaw por uma solução baseada em `playwright-mcp`, rodando em ambientes isolados.
-3. **Stealth Scraping:** Utiliza bypass de Cloudflare via MCP para permitir que o Gem Hunter acesse dados protegidos.
-4. **Visualização em Tempo Real:** (Em desenvolvimento) Topologia de rede dos agentes, terminais de log imersivos e controle de memória.
+### 1. [carteira-livre](https://github.com/enioxt/carteira-livre) (A Fonte / Padrão Ouro)
+O projeto que define o nosso padrão de excelência. É altamente modularizado, componentizado e limpo. Toda nova arquitetura deve fazer engenharia reversa e copiar os padrões estabelecidos aqui.
 
-## 🚀 Estado Atual e Roadmap
+### 2. [forja](https://github.com/enioxt/forja) (O Alvo Imediato)
+Nosso projeto mais avançado depois do Carteira Livre. O objetivo atual de engenharia é refatorar toda a base de código da Forja para que ela replique perfeitamente a estrutura e os padrões do Carteira Livre.
 
-O Kernel está passando por uma **reestruturação visual e arquitetural profunda** para deixar de ser um "SaaS genérico" e se tornar um verdadeiro *Technical Dashboard / Mission Control*.
+### 3. [egos](https://github.com/enioxt/egos) (O Monorepo / Laboratório de Agentes)
+O antigo `egos-lab` foi arquivado. O repositório `egos` assume oficialmente o papel de **Laboratório Central de Agentes e Motores de IA**. É aqui que construímos, testamos e validamos os agentes antes de enviá-los para produção. Também é o lar do pacote `@enioxt/ai-rules` (nossas regras pragmáticas de IA).
 
-Consulte o arquivo `TASKS.md` para ver o roadmap completo de expansão.
-Consulte `docs/AGENT_ORCHESTRATION_PLAN.md` para detalhes técnicos de orquestração.
+---
 
-## Use partes. Use tudo. Derive o seu.
-Cada parte pode ser lida, adaptada, removida, expandida ou recombinada.
-Você não precisa aceitar o sistema inteiro para aproveitar o que ele já entrega.
+## 📚 Documentos Históricos e Fundacionais
 
-## Contribuição voluntária
-Se isso gerar valor para você, contribua com o que fizer sentido.
-Nossa referência é **5% do valor percebido**, sem bloqueio, sem coerção e sem dependência.
+Neste repositório, você encontrará os registros das nossas decisões arquiteturais:
+- `HANDOFF_CRITICA_NEGOCIOS.md`: O momento em que pivotamos da filosofia pura para o pragmatismo de mercado.
+- `HANDOFF.md`: A transição do painel genérico para a visão de Mission Control.
+- `AGENTS.md` & `frozen-zones.md`: Nossos primeiros rascunhos de governança de IA (agora centralizados no pacote `@enioxt/ai-rules`).
+
+---
+*Fim da transmissão. Nos vemos no campo de batalha (nos repositórios ativos).*

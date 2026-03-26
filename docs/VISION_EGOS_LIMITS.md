@@ -1,4 +1,7 @@
-# EGOS: O Limite Matemático e Sistêmico
+# 🏛️ [DOCUMENTO HISTÓRICO] EGOS: O Limite Matemático e Sistêmico
+
+> **⚠️ NOTA HISTÓRICA:** Este documento reflete a visão filosófica e teórica do projeto. O repositório `BLUEPRINT-EGOS` está arquivado. A arquitetura de produção atual segue o pragmatismo e o padrão modular do `carteira-livre`.
+
 **Manifesto Arquitetural e Cenários de Expansão (2026)**
 
 Este documento consolida a visão definitiva, a análise crítica do estado atual e o roadmap de expansão do ecossistema EGOS (Kernel, Forja, 852, Gem Hunter, ATRiAN, Cortex, IPED). Ele eleva a arquitetura ao seu limite teórico e prático, utilizando conceitos de teoria dos grafos, sistemas complexos e inteligência de enxame (swarm intelligence).

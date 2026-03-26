@@ -1,4 +1,7 @@
-# Mapeamento do Estado da Arte (SOTA)
+# 🏛️ [DOCUMENTO HISTÓRICO] Mapeamento do Estado da Arte (SOTA)
+
+> **⚠️ NOTA HISTÓRICA:** Este documento reflete uma fase anterior de pesquisa do projeto. O repositório `BLUEPRINT-EGOS` está arquivado. A arquitetura atual segue o padrão modular do `carteira-livre`.
+
 **Diretriz: Não Reinventar a Roda. Adaptar, Usar, Testar e Validar.**
 
 Este documento mapeia os projetos open-source, frameworks privados e conceitos matemáticos que já existem no mercado. O objetivo do **EGOS Kernel** não é recriar essas tecnologias do zero, mas atuar como o **tecido conectivo (cola)** que une as melhores ferramentas do mundo em um ecossistema focado em OSINT, segurança e autonomia.

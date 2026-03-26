@@ -1,4 +1,6 @@
-# EGOS Kernel - Mission Control Handoff
+# 🏛️ [DOCUMENTO HISTÓRICO] EGOS Kernel - Mission Control Handoff
+
+> **⚠️ NOTA HISTÓRICA:** Este documento reflete uma fase anterior do projeto (26 de Março de 2026) onde o foco era transformar o painel em um "Mission Control". Desde então, a estratégia evoluiu para a **Tríade Pragmática** (`carteira-livre`, `forja`, `egos`). Mantido aqui apenas para registro arquitetural.
 
 **Data:** 26 de Março de 2026
 **Contexto:** Transição de ambiente e redefinição arquitetural profunda.

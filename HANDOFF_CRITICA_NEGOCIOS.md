@@ -1,4 +1,6 @@
-# HANDOFF: Crítica de Negócios e Desconstrução do EGOS/Mycelium
+# 🏛️ [DOCUMENTO HISTÓRICO] HANDOFF: Crítica de Negócios e Desconstrução do EGOS/Mycelium
+
+> **⚠️ NOTA HISTÓRICA:** Este é o documento fundamental que marcou a nossa transição do "over-engineering filosófico" para o pragmatismo focado em negócios e na arquitetura modular do `carteira-livre`. É a base da nossa estratégia atual.
 
 **Data:** 2026-03-24
 **Contexto:** Desconstrução pragmática e focada em negócios do ecossistema EGOS, Mycelium e orquestração cross-repository.
