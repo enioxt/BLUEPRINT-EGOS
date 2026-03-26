@@ -1,58 +1,55 @@
-# EGOS - Mission Control & Agentic CI/CD Handoff
+# EGOS Kernel - Mission Control Handoff
 
-**Data:** 25 de Março de 2026
-**Contexto:** Transição de ambiente (Google AI Studio -> Windsurf / Antigravity / Outros)
-**Objetivo:** Construção do `kernel.egos.ia.br` como módulo central de orquestração, proveniência e triagem agêntica dentro do ecossistema `egos.ia.br`.
-
----
-
-## 1. Visão Geral da Arquitetura (O que construímos)
-
-Transformamos o dashboard estático em um **Mission Control Real-Time** que consome dados vivos do GitHub (`enioxt`). O objetivo é que este painel seja hospedado no VPS da Contabo (`kernel.egos.ia.br`) e atue como o cérebro visual da esteira de CI/CD agêntica.
-
-### Componentes Principais:
-1. **Sistema de Setup Autoexplicativo (Novo):**
-   - A interface detecta automaticamente a ausência de variáveis de ambiente (`VITE_GITHUB_TOKEN`, `VITE_SUPABASE_URL`, `VITE_FASTAPI_URL`).
-   - Exibe alertas modulares com passo a passo de como obter as credenciais. Os alertas somem magicamente assim que a integração é feita.
-2. **Event Stream & Provenance:**
-   - Monitora commits reais do repositório `BLUEPRINT-EGOS`.
-   - Extrai a "assinatura" (Provenance) para identificar a origem do código (Google AI Studio, Windsurf IDE, Antigravity CLI, Humano).
-3. **OpenClaw & Triagem (Agentic Layer):**
-   - Simula a fila de processamento onde o **EGOS Triage Agent** analisa o diff dos commits.
-   - O **OpenClaw Executor** é acionado para clonar, mover arquivos e abrir Pull Requests automaticamente (depende do FastAPI configurado).
-4. **CI/CD & GitHub Actions Control:**
-   - Integração direta com a API do GitHub para listar e gerenciar *workflow runs*.
-   - Interface modular para habilitar/desabilitar pipelines de forma pragmática.
-5. **Ecossistema de Repositórios (Live):**
-   - Mapeia repositórios da conta `enioxt`.
-   - **Nota sobre Repositórios Privados:** Projetos como `live school` e `commons` exigem que o `VITE_GITHUB_TOKEN` tenha escopo `repo` para serem listados.
+**Data:** 26 de Março de 2026
+**Contexto:** Transição de ambiente e redefinição arquitetural profunda.
+**Objetivo:** Transformar o `kernel.egos.ia.br` de um "dashboard genérico" para uma verdadeira **Central de Comando (Mission Control)** que orquestra todo o ecossistema EGOS (Forja, 852, Gem Hunter, ATRiAN, Cortex, IPED).
 
 ---
 
-## 2. Stack Tecnológica Definida
+## 1. Análise Crítica e Mudança de Rota
 
-- **Frontend (Este Dashboard):** React 18 + Vite + Tailwind CSS + Framer Motion + Lucide Icons. Totalmente modularizado com seções expansíveis (Accordions).
-- **Ingestion Gateway (A ser implementado no backend):** FastAPI (Python) rodando no VPS Contabo. Fornecerá a `VITE_FASTAPI_URL`.
-- **State & Vector Store:** Supabase (PostgreSQL + pgvector) para armazenar logs de eventos e embeddings de código.
-- **Execução:** OpenClaw (Engine de automação de repositórios).
+Após uma revisão profunda dos repositórios avançados (`EGOS-Inteligencia`, `brazil-visible-sdk`, `open-tender-watch`, `egos-cortex`, `IPED`), concluímos que o visual e a estrutura atual do Kernel (baseada em um `App.tsx` monolítico de >800 linhas) não reflete a complexidade e a ambição do projeto.
 
----
+O Kernel atual parece um "SaaS de monitoramento de commits". Ele precisa ser um **Nervo Central Cibernético**.
 
-## 3. Próximos Passos (Para o próximo ambiente/agente)
-
-Ao carregar este contexto no Windsurf, Antigravity ou outro IDE, siga esta ordem de execução:
-
-1. **Configuração de Ambiente (.env):**
-   - Copie o `.env.example` para `.env`.
-   - Gere um GitHub PAT (escopos: `repo`, `workflow`) para liberar o controle de Actions e a leitura de repositórios privados (`live school`, `commons`).
-2. **Desenvolvimento do Gateway FastAPI (Backend):**
-   - Criar o serviço em Python que receberá os webhooks do GitHub e executará o OpenClaw.
-   - Ao rodar localmente, defina `VITE_FASTAPI_URL=http://localhost:8000`. No deploy da Contabo, atualize para o IP/Domínio de produção.
-3. **Integração Supabase:**
-   - Configurar as tabelas para armazenar os eventos de proveniência e habilitar a extensão `pgvector`. Preencher `VITE_SUPABASE_URL` e a chave anônima.
-4. **Deploy do Frontend:**
-   - Fazer o build deste painel React (`npm run build`) e configurar o Nginx no VPS Contabo para servir em `kernel.egos.ia.br`.
+### O Novo Paradigma:
+1. **Topologia Visual:** O usuário precisa ver os agentes (Nós) conversando em tempo real (React Flow).
+2. **Terminais Imersivos:** Logs crus e diretos dos servidores MCP e do FastAPI.
+3. **Substituição do OpenClaw:** Transição oficial para `playwright-mcp` (mais leve, seguro e aderente ao Zero Trust do ATRiAN).
+4. **Integração de Dados Públicos:** O Gem Hunter deve absorver nativamente as capacidades do `brazil-visible-sdk` e `open-tender-watch`.
 
 ---
 
-*Fim do documento de Handoff. O sistema EGOS aguarda inicialização no próximo nó.*
+## 2. A Nova Arquitetura de Agentes
+
+O Kernel agora é o maestro de quatro pilares principais:
+- **Forja:** Fábrica de agentes e código.
+- **852:** Chatbot seguro (DashScope/OpenRouter).
+- **Gem Hunter:** OSINT e Stealth Scraping (Bypass Cloudflare).
+- **ATRiAN:** Firewall Ético e Validador de Realidade.
+
+*Nota: O Intelink foi temporariamente removido do escopo principal para focar nestes quatro pilares.*
+
+---
+
+## 3. Próximos Passos Imediatos (Para o próximo agente/IDE)
+
+Ao carregar este contexto no Windsurf ou Cursor, execute as seguintes tarefas na ordem:
+
+1. **Desmembramento do Monolito (`src/App.tsx`):**
+   - Crie a pasta `src/components/kernel/` e mova a lógica de UI para lá.
+   - Implemente um design "Technical Dashboard" (fundo escuro, fontes monospace, alta densidade).
+
+2. **Implementação do React Flow:**
+   - Crie a visualização topológica mostrando o Kernel no centro e os 4 agentes ao redor.
+
+3. **Setup do Backend (FastAPI):**
+   - O arquivo `.env` já possui `VITE_FASTAPI_URL` e `VITE_FASTAPI_KEY`.
+   - Inicie a construção do roteador Python que receberá os comandos do frontend e acionará os agentes via MCP.
+
+4. **Stealth Scraper & Playwright MCP:**
+   - Configure os servidores MCP locais para dar "mãos" (Playwright) e "olhos" (Bypass Cloudflare) aos agentes.
+
+---
+
+*Fim do documento de Handoff. O sistema EGOS aguarda a reconstrução visual e arquitetural no próximo nó.*

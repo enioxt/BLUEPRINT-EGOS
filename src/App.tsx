@@ -53,6 +53,7 @@ const config = {
   githubToken: import.meta.env.VITE_GITHUB_TOKEN,
   supabaseUrl: import.meta.env.VITE_SUPABASE_URL,
   fastapiUrl: import.meta.env.VITE_FASTAPI_URL,
+  fastapiKey: import.meta.env.VITE_FASTAPI_KEY,
 };
 
 // --- COMPONENTS ---
@@ -320,13 +321,14 @@ const OpenClawTriageView = () => {
         <Badge variant="critical">OpenClaw Engine</Badge>
       </div>
 
-      {!config.fastapiUrl && (
+      {(!config.fastapiUrl || !config.fastapiKey) && (
         <SetupAlert 
           title="Backend FastAPI Não Conectado (Modo Simulação)"
-          description="A execução do OpenClaw está rodando em modo simulado no frontend. Para executar agentes reais, conecte o gateway."
+          description="A execução do EGOS Kernel está rodando em modo simulado no frontend. Para executar agentes reais, conecte o gateway."
           steps={[
-            'Faça o deploy do backend Python (FastAPI) no seu VPS Contabo.',
-            'Adicione VITE_FASTAPI_URL=https://sua-api.com no arquivo .env',
+            'Faça o deploy do backend Python (FastAPI) no seu VPS Contabo (ou rode localmente).',
+            'Adicione VITE_FASTAPI_URL=http://localhost:8000 (ou a URL do VPS) no arquivo .env',
+            'Adicione VITE_FASTAPI_KEY=sua_senha_inventada no arquivo .env',
             'O botão \'Executar OpenClaw\' passará a enviar webhooks reais para a engine.'
           ]}
         />
@@ -766,9 +768,9 @@ export default function App() {
 
         <div className="p-4 border-t border-zinc-800/50">
           <div className="flex items-center gap-3 px-3 py-2">
-            <div className={cn("w-2 h-2 rounded-full animate-pulse", (config.githubToken && config.supabaseUrl && config.fastapiUrl) ? "bg-emerald-500" : "bg-amber-500")} />
+            <div className={cn("w-2 h-2 rounded-full animate-pulse", (config.githubToken && config.supabaseUrl && config.fastapiUrl && config.fastapiKey) ? "bg-emerald-500" : "bg-amber-500")} />
             <span className="text-xs font-medium text-zinc-400">
-              {(config.githubToken && config.supabaseUrl && config.fastapiUrl) ? "Kernel Interligado" : "Configurações Pendentes"}
+              {(config.githubToken && config.supabaseUrl && config.fastapiUrl && config.fastapiKey) ? "Kernel Interligado" : "Configurações Pendentes"}
             </span>
           </div>
         </div>
