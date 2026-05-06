@@ -1,0 +1,21 @@
+#!/bin/sh
+# EGOS Pre-Commit (profile: minimal)
+# Source: /home/enio/egos/.husky/_profiles/minimal.sh
+#
+# Para customizar checks adicionais SEM modificar o profile global,
+# adicione abaixo do "source" (ex: validações específicas deste repo).
+
+EGOS_HUSKY="/home/enio/egos/.husky"
+export EGOS_HUSKY
+
+if [ ! -f "$EGOS_HUSKY/_profiles/minimal.sh" ]; then
+  echo "⚠️  EGOS pre-commit profile não encontrado em $EGOS_HUSKY"
+  echo "   Pulando pre-commit. Clone egos em /home/enio/egos ou ajuste EGOS_HUSKY."
+  exit 0
+fi
+
+bash "$EGOS_HUSKY/_profiles/minimal.sh"
+
+# ── Customizações locais deste repo (adicionar abaixo) ──
+# Exemplo:
+# bash .husky/_local/build-check.sh
