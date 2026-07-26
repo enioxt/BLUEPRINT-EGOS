@@ -1,9 +1,10 @@
 # EGOS-KERNEL-PROPAGATED: 2026-07-26
 <!-- AUTO-INJECTED by disseminate-propagator.ts — DO NOT EDIT THIS BLOCK MANUALLY -->
-<!-- Kernel commit: 4952d578 | 1 rule section(s) changed -->
+<!-- Kernel commit: 96c57854 | 2 rule section(s) changed -->
 <!-- Source of rules: egos/AGENTS.md (canonical). Kernel-only authoritative copy: ~/.claude/CLAUDE.md -->
 <!-- Re-run: bun ~/egos/scripts/disseminate-propagator.ts --all to update -->
-<!-- ~ CLAUDE.md (2 lines) -->
+<!-- + CAPABILITY_REGISTRY.md (3 lines) -->
+<!-- + CAPABILITY_REGISTRY.md → ## §125 — Motor determinístico de custo, margem e sinal (2026-07-26) (32 lines) -->
 
 > ⚠️ **PROPAGATED FROM KERNEL** — Edits to this block are overwritten by next `bun governance:sync:exec`.
 > Edit kernel `egos/AGENTS.md` section between `<!-- PROPAGATE-RULES-BEGIN -->` and `<!-- PROPAGATE-RULES-END -->` instead.
@@ -178,10 +179,16 @@ Canonical eval strategy: `docs/knowledge/AI_EVAL_STRATEGY.md` (being written —
 3. **Tríade da Confiança:** todo output relevante carrega 3 selos — ① Conferido-contra-fontes ② Provado-na-origem ③ Assinado-por-humano. Em peça jurídica, o selo ③ é SEMPRE ato humano do subscritor, nunca carimbo. → `egos/docs/governance/LAYER_0_SSOT.md §4.8`
 4. **Calibragem progressiva:** todo gate/regra/filtro nasce máximo-restritivo (fail-closed), registra falso-positivos (telemetria) e calibra com evidência — cada calibragem AMPLIA o vocabulário da regra, nunca afrouxa por atrito. Calibragem é sempre decisão humana registrada. → `egos/docs/governance/EGOS_OPERATING_PRINCIPLES.md`
 
-**R12 — Anti-Hipérbole / Prova Ativa (INC-010 - 2026-07-26):** Textos públicos (copy, MDs, análises) estão sob a doutrina DFP e não podem conter absolutos ufanistas ("100%", "ninguém no mundo", "perfeito") sem prova.
-- Agentes de IA são proibidos de criar essas narrativas.
-- Todo texto que gerar comparações com o mercado deve ser submetido à classificação `REAL/CONCEPT/PHANTOM`.
-- O Gate `17-anti-hyperbole.sh` fará o bloqueio duro. Bypass apenas via `HYPERBOLE_OVERRIDE: <motivo>`.
+**R12 — Anti-Hipérbole / Prova Ativa (INC-010, 2026-07-26):** texto público (copy, `.md`, análise) está sob a DFP e não carrega absoluto ufanista ("100%", "ninguém no mundo", "perfeito", "a única solução") sem prova. Comparação com o mercado exige classificação `REAL/CONCEPT/PHANTOM` por item.
+- Gate REAL: `scripts/check-banned-words.sh`, wired em `.husky/pre-commit:379`, **hard-block por padrão** desde o INC-010. Bypass: `EGOS_BANNED_SKIP="<motivo>"` (pontual) ou `EGOS_BANNED_WARN_ONLY=1` (degrada a aviso).
+- **Correção de fantasma 2026-07-26:** a 1ª redação desta regra citava um gate `17-anti-hyperbole.sh` e um bypass `HYPERBOLE_OVERRIDE` — **nenhum dos dois existe**. O gate redundante foi deletado no mesmo dia e o `check-banned-words.sh` que já existia foi endurecido no lugar (ADOPT). Regra que aponta gate inexistente é a própria hipérbole que ela proíbe.
+
+**R13 — NADA QUEBRA EM SILÊNCIO (R-NO-SILENT-FAIL-001, corte Enio 2026-07-26; dá gate ao "falhe visível" do §P5, que existia sem enforcement):** capacidade só está pronta quando o **caminho de falha** dela existe e foi provado. Três proibições, cada uma com fato-gerador medido:
+- **(a) sucesso-fantasma** — reportar ok com a operação falhando. `broadcast_step` devolvia `"Broadcast sent"` com o INSERT em 403; `sendTelegram` marcava entregue com `{"ok":false}` de HTTP 401 (`notify-router.ts:234`, corrigido).
+- **(b) gate mole** — cabeado com `|| exit 1` mas incapaz de sair 1: `check-cap-modular.sh` (sempre `exit 0`), `check-banned-words.sh` (warn-only por dentro), `human-doc-html-check.ts` (só bloqueia com flag), `env-shadow-check.ts` (não estava wired). Cabear não é enforcar.
+- **(c) medição que não mediu** — declarar limpo sem ter conseguido medir. "Não sei" nunca se apresenta como "ok" (ver `workspace-orphan-check.ts`, exit 2).
+- **Corolário de crescimento (é a parte que vale pro futuro):** notificador/job/gate novo só entra com **(1)** prova de entrega, **(2)** destino durável quando o canal principal falha, **(3)** um leitor desse destino. **Fila sem leitor é lixo:** a `notify-soft-queue.jsonl` acumulou 56 eventos entre 2026-06-19 e 2026-07-26 enquanto o SSOT afirmava "surface no /start" — o leitor não existia (criado em `/start` §4.5d).
+- Gates: `env-shadow-check` + `workspace-orphan-check` + `phantom-done` + `notify-router --test` (sai ≠0 se não entregou). SSOT: `docs/governance/NOTIFICATION_SSOT.md §R-NO-SILENT-FAIL-001`.
 
 <!-- === END KERNEL RULES BODY === -->
 
