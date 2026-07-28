@@ -1,9 +1,8 @@
-# EGOS-KERNEL-PROPAGATED: 2026-07-26
+# EGOS-KERNEL-PROPAGATED: 2026-07-27
 <!-- AUTO-INJECTED by disseminate-propagator.ts — DO NOT EDIT THIS BLOCK MANUALLY -->
-<!-- Kernel commit: 2c791910 | 1 rule section(s) changed -->
+<!-- Kernel commit: ceec373d | 0 rule section(s) changed -->
 <!-- Source of rules: egos/AGENTS.md (canonical). Kernel-only authoritative copy: ~/.claude/CLAUDE.md -->
 <!-- Re-run: bun ~/egos/scripts/disseminate-propagator.ts --all to update -->
-<!-- ~ CAPABILITY_REGISTRY.md → ## §125 — Motor determinístico de custo, margem e sinal (2026-07-26) (8 lines) -->
 
 > ⚠️ **PROPAGATED FROM KERNEL** — Edits to this block are overwritten by next `bun governance:sync:exec`.
 > Edit kernel `egos/AGENTS.md` section between `<!-- PROPAGATE-RULES-BEGIN -->` and `<!-- PROPAGATE-RULES-END -->` instead.
@@ -32,7 +31,7 @@ Filosofia sem gate é manifesto: regra nasce de incidente, ganha enforcement exe
 O motor viaja no git; o dado real nunca (R-SEC-002 [T0]: investigação/PCMG/PII jamais em git/nuvem/superfície pública). PII mascarada default · publicação e PUSH só pós-scan (R-SEC-005/008 — pre-push escaneia o range) · secret nunca ecoado (R-SEC-007) · motor separado do dado + golden sintético (R-PERSONAL-TO-PRODUCT). **Fronteira nunca depende da POSIÇÃO do nome num caminho (R-FRONTEIRA-INTRINSECA-001, M1 2026-07-26):** predicado é intrínseco ao dado (segmento, marcador, manifesto) — um `mv` desligou a fronteira soberana em 09423df7 e vazaram 3 índices consultáveis, sem um aviso, porque mover pasta não roda teste. Gates: gitleaks/audit-secrets/R-ENV-001/pii-hardblock + pre-push + sovereign-filter + sovereign-predicate-check (§1.59) + guard-brasil + scrub. → `docs/governance/ENV_DISCIPLINE.md` + `docs/INCIDENTS/INC-PII-001*`.
 
 ### P5 — ENTENDER > PRODUZIR
-Complexidade sem entendimento se rejeita; problema sem sintoma não se resolve; muitas prioridades = nenhuma. Karpathy (mínimo código · assumptions primeiro · falhe visível) · requisitos mínimos ou PARAR · descubra-antes-de-criar (/discover + codebase-memory obrigatórios; ADOPT>rebuild) · capacidade nova = ≥3 golden (§R7) · anti-proliferação (R-DOC-BUDGET). **Diretório de coordenação tem TETO (R-COORD-CARDINALIDADE-001, M1 2026-07-26):** aviso não muda direção — formato muda. 14 handoffs onde o SSOT dizia 1; o PRIME_INBOX ficou 38 dias não-lido tendo sido resolvido em 2. O custo é de atenção, não de espaço. Gates: min-requirements + coruja + visual-proof + doc-proliferation + coord-cardinality (§1.61) + eval-runner. → `~/.claude/CLAUDE.md §P5` + §R7 abaixo.
+Complexidade sem entendimento se rejeita; problema sem sintoma não se resolve; muitas prioridades = nenhuma. Karpathy (mínimo código · assumptions primeiro · falhe visível) · requisitos mínimos ou PARAR · descubra-antes-de-criar (/discover + codebase-memory obrigatórios; ADOPT>rebuild) · capacidade nova = ≥3 golden (§R7) · anti-proliferação (R-DOC-BUDGET). **Fila tem teto e ROTAÇÃO AUTOMÁTICA (R-TASKS-FILA-001 + R-TASKS-ROTACAO-001, M1 2026-07-26):** o teto conta TASK ABERTA, não linha — medido: 65% das linhas do TASKS.md não eram task, e a unidade punia formatação (4609 chars numa linha contavam 1). P2/P3 parada 30d+ migra sozinha para o `ROADMAP.md`; P0/P1 e `gated:` nunca migram, porque prioridade parada é problema de prioridade e esconder no backlog maquiaria o que o gate deve expor. Faxina virou fluxo, não interrupção. **Diretório de coordenação tem TETO (R-COORD-CARDINALIDADE-001, M1 2026-07-26):** aviso não muda direção — formato muda. 14 handoffs onde o SSOT dizia 1; o PRIME_INBOX ficou 38 dias não-lido tendo sido resolvido em 2. O custo é de atenção, não de espaço. Gates: min-requirements + coruja + visual-proof + doc-proliferation + coord-cardinality (§1.61) + eval-runner. → `~/.claude/CLAUDE.md §P5` + §R7 abaixo.
 
 > **Reflexos pré-ação** (vivem no boot, exceção auditável do mapa — o dano acontece na conversa, antes de existir artefato): R-ARCH-001 (decisão de cliente nunca inferida) · R-DIAG-001 (diagnóstico antes de demo) · orquestração main-loop (braço → Agent com `model` explícito; Opus/Fable nunca subagente) · git destrutivo → bundle provado antes · pós-autocompact = mesma janela. → `~/.claude/CLAUDE.md §REFLEXOS`.
 <!-- BOOT-ABI:END section=pilares -->
@@ -122,8 +121,24 @@ When in doubt, prefer extraction over duplication, canon over parallel docs, and
 | INC-007 | API key exposure via `|| fallback` pattern — never commit secrets |
 | INC-008 | Phantom compliance stubs — see R7 below |
 | INC-009 | Leaf-repo silo-work (agente cria SSOT paralelo ignorando canonical existente) — see R2.5 above. `/start` LAYER 4.6 força leitura de SSOTs do leaf antes de qualquer write |
+| INC-011 | Acesso a WhatsApp/Evolution API sem escopo mínimo — see R-WPP-ACCESS-001 below |
 
 Full postmortems: `docs/INCIDENTS/INC-XXX-*.md`. Index: `docs/INCIDENTS/INDEX.md`.
+
+### R-WPP-ACCESS-001 — Acesso a WhatsApp/Evolution API é sob demanda pontual (INC-011, 2026-07-27)
+
+**Regra (corte Enio):** Toda chamada a uma instância Evolution API (WhatsApp pessoal ou de negócio) precisa ser estritamente necessária pro pedido ATUAL do humano — nunca navegação exploratória ("já que estou aqui, vou olhar mais"). Escopo por padrão é o mais estreito possível: 1 grupo/conversa nomeada, nunca a conta inteira sem filtro (`findMessages`/`findChats` sem `remoteJid` = proibido por padrão). Atualizar dado que já foi lido (relistar "pra confirmar") sem pedido novo do humano é violação.
+
+**Why:** 2026-07-27, investigando por que o grupo "MANI CONGELADOS" não sincronizava, uma instância pessoal (`enio-personal`) foi encontrada sob rate-limit ativo do próprio WhatsApp (194 erros `rate-overlimit`/30min — risco real de banimento do número). A causa raiz (214 grupos simultâneos sobrecarregando a conexão) só foi confirmada com 2 chamadas cirúrgicas; o padrão natural do agente teria sido continuar sondando (mais `docker logs`, mais `findMessages`) sobre uma conexão já sob estresse. Enio interrompeu 2x pedindo para limitar o padrão antes que virasse hábito.
+
+**How to apply:**
+1. Antes de qualquer chamada Evolution API: essa chamada responde ao pedido explícito de agora, ou é curiosidade/verificação redundante? Se a segunda, não faz.
+2. Escopo mínimo sempre — filtrar por `remoteJid`/grupo nomeado; nunca puxar a conta inteira "pra ver o que tem".
+3. Investigação de causa raiz (ex: rate-limit, sync quebrado) usa o MENOR número de chamadas que ainda prova a causa — não itera até ter certeza absoluta.
+4. Ação de mudança de estado (sair de grupo, enviar mensagem, reconectar sessão) NUNCA é autônoma — sempre lista candidatos e espera o humano escolher, mesmo que o pedido pareça abranger "todos".
+5. `docker logs`/queries de infra do Evolution API seguem a mesma disciplina: janela curta e específica, não `--since <longo>` exploratório.
+
+Memória de sessão relacionada (não-constitucional, contexto): `~/.claude/projects/.../memory/feedback-enio-limitar-acesso-evolution-api.md` e `project_evolution-whatsapp-pessoal-rate-limit.md`.
 
 ### R-RLS-001 — Row-Level Security (INC-006, 2026-05-05)
 Every RLS policy MUST have explicit `TO <role>`. No `{public}` on sensitive tables (`users`, `*_keys`, `*_secrets`, `admin_*`). Validator: `scripts/security/rls-validator.ts`. Continuous auditor: `scripts/security/rls-auditor-comprehensive.ts` (VPS cron daily 2 AM UTC). Setup: `docs/jobs/SUPABASE_RLS_AUDIT_SETUP.md`. Override: `RLS-POLICY-OVERRIDE: <reason>`.
