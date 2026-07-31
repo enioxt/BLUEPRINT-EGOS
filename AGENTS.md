@@ -1,10 +1,9 @@
-# EGOS-KERNEL-PROPAGATED: 2026-07-28
+# EGOS-KERNEL-PROPAGATED: 2026-07-31
 <!-- AUTO-INJECTED by disseminate-propagator.ts — DO NOT EDIT THIS BLOCK MANUALLY -->
-<!-- Kernel commit: 991a4a8d | 2 rule section(s) changed -->
+<!-- Kernel commit: df503ede | 1 rule section(s) changed -->
 <!-- Source of rules: egos/AGENTS.md (canonical). Kernel-only authoritative copy: ~/.claude/CLAUDE.md -->
 <!-- Re-run: bun ~/egos/scripts/disseminate-propagator.ts --all to update -->
-<!-- + CAPABILITY_REGISTRY.md (1 lines) -->
-<!-- + CAPABILITY_REGISTRY.md → ## §127 — Gate de métrica derivada do tempo (2026-07-28) (14 lines) -->
+<!-- + CLAUDE.md (1 lines) -->
 
 > ⚠️ **PROPAGATED FROM KERNEL** — Edits to this block are overwritten by next `bun governance:sync:exec`.
 > Edit kernel `egos/AGENTS.md` section between `<!-- PROPAGATE-RULES-BEGIN -->` and `<!-- PROPAGATE-RULES-END -->` instead.
@@ -110,6 +109,7 @@ When in doubt, prefer extraction over duplication, canon over parallel docs, and
 3. After 10+ turns or compaction: re-read TASKS.md + current file.
 4. Cost control: 3 retries fail on same error → STOP, flag `[BLOCKER]`.
 5. **Session checkpoint:** when pre-commit emits `[CHECKPOINT-NEEDED]` (turns≥10/commits≥15/elapsed≥90min), invoke `/checkpoint` (Hard Reset). Use `bun scripts/session-init.ts --status` to check. Never ignore [CHECKPOINT-NEEDED].
+6. **Concurrent windows on the same checkout → worktree from start, constitutional (not just suggestion).** `session-registry.ts check` detects another live session on the SAME checkout. If detected AND this session will write/commit AND its objective diverges from the others' → open with `claude --worktree <name>` BEFORE editing hotspots (TASKS.md/CLAUDE.md/AGENTS.md/.guarani). Exceptions (worktree cost > protection): single session · read-only/research mode · work in a separate repo · trivial single-file edit · work depending on `.env`/deploy-from-tree (worktree lacks `.env`, gitignored). Pre-commit ALREADY verifies and blocks a shared-index commit with 2+ live windows (`INDICE-COMPARTILHADO-001`, `.husky/pre-commit` §0.15) — that gate is the backstop; worktree is the cure. SSOT: `docs/governance/SWARM_COMMIT_POLICY.md §Multi-Window`.
 
 ### R6 — Incident-driven (always load when relevant)
 | Incident | Rule |
