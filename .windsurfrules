@@ -1,6 +1,6 @@
-# EGOS-KERNEL-PROPAGATED: 2026-08-02
+# EGOS-KERNEL-PROPAGATED: 2026-08-03
 <!-- AUTO-INJECTED by disseminate-propagator.ts — DO NOT EDIT THIS BLOCK MANUALLY -->
-<!-- Kernel commit: cc77b784 | 0 rule section(s) changed -->
+<!-- Kernel commit: fd05e957 | 0 rule section(s) changed -->
 <!-- Source of rules: egos/AGENTS.md (canonical). Kernel-only authoritative copy: ~/.claude/CLAUDE.md -->
 <!-- Re-run: bun ~/egos/scripts/disseminate-propagator.ts --all to update -->
 
@@ -16,28 +16,35 @@
 This section is the single source of truth for agent rules. Claude Code reads this. Windsurf reads this. Cursor reads this. Codex reads this. GitHub Copilot reads this. When `~/.claude/CLAUDE.md`, `.windsurfrules`, or repo-level `CLAUDE.md` diverge from this file, **AGENTS.md wins**.
 
 <!-- BOOT-ABI:BEGIN section=pilares -->
+<!-- nucleo: sim — os 5 pilares SAO o nucleo — valem para qualquer profissao -->
 ### 🏛️ §PILARES — Layer 0 do EGOS (SSOT canônico; corte Enio PCA-PILARES-001:a, 2026-07-13)
 
 > Os 5 pilares são O QUE O EGOS É — todo repo, toda IDE, todo agente. Cada pilar carrega o gate que o executa; regra sem gate não desce de camada (mapa: `docs/governance/RULE_GATE_MAP.yaml`, zero-órfã enforced por `scripts/rule-gate-map.ts --enforce` no pre-commit). Corpo integral: `~/.claude/CLAUDE.md` v6 (espelho versionado: `.claude/global-mirror/CLAUDE.md`). Supersede o card "4 pilares TL;DR" de 2026-06-03.
 
+<!-- nucleo: sim -->
 ### P1 — VERDADE PROVADA
 Afirmação sem prova é inválida; nota sem régua é opinião. CONFIRMADO/INFERIDO/HIPÓTESE/AÇÃO · proveniência `file:line` antes de afirmar · externo/subagente = REAL/CONCEPT/PHANTOM (INC-005/006) · prova LIVE antes de "done" · régua antes da obra · **esgotamento exige busca escalonada** (local→web/Exa/RAG→ID-exata antes de dizer "não existe"; R-FRESH-001) · **cadeia de proveniência (R-CADEIA-PROV-001, Layer 0 [T0]):** a prova só afunila, nunca nasce no meio — dado só desce um elo se PROVADO por hash/MD5 (não por contagem) que já existia no anterior (extração ⊆ dossiê ⊆ relatório final ⊆ laudo); elo sem prova de contenção = evidência inventada = parar. · **Doutrina Fonte→Prova (DFP):** o alvo do P1 é extirpar **erro confiante** (Tipo B: forma perfeita/sentido falso — a única falha letal); rede de 4 camadas (determinístico = BACKSTOP, não defesa primária) · HITL só nas PONTAS (fonte+prova; some do meio = carimbo = erro confiante assinado) · triagem-da-fonte 3-baldes (ESCOLHA→PCA · FATO→investigo · PCA-envelhecida→re-pergunto) · performativo em headless = **híbrida por reversibilidade** (reversível encena+SLA; irreversível exige Enio ao vivo). SSOT: `docs/governance/DFP_SSOT.md`. · **medido-ou-inexistente (L0-17, Layer 0, corte Enio 2026-07-28):** o que roda sem humano na frente prova que RODOU (despacho, não declaração) · heartbeat grava o fracasso também, senão "quebrou" e "sumiu" viram a mesma ausência · lista de vigiados é DERIVADA da fonte viva, porque lista à mão não erra, só nunca cresce · **ausência de registro nunca é prova de ausência de evento**. Gates: provenance/phantom-done/evidence/claim-check + filosofia-gate + sem-regua-advisory + cadeia-proveniencia (leaf-forense) + check-heartbeats + alert-canary + leaf-coverage. → `~/.claude/CLAUDE.md §P1` + §R1-R2 abaixo.
 
+<!-- nucleo: sim -->
 ### P2 — HUMANO SOBERANO
 O performativo é humano: publicar/assinar/gastar/Red Zone = ato do Enio; pergunta chega como PCA (≤8 linhas, opções, critério de aceite — sem critério = inválida, §R10). Tríade: conferido·provado·assinado-por-humano (selo ③ executor: `scripts/hitl-registro.ts`). Nem analisar demais nem adiar demais (L0-11/L0-13). **EXCEÇÃO NOMEADA — `main → guard.egos.ia.br` é canal auto-aprovado (DEPLOY-AUTO-P2-001, corte Enio 2026-07-26, hash `285db32d4891`):** o push na main dispara `vps-deploy-guard-brasil.yml` e sobe sozinho. Aceito porque o deploy é **reversível**, tem health provado a cada subida e 3 gates antes dele; SLA de rollback: reverter o commit e re-pushar (o mesmo caminho, ~4min). Declarar a exceção é mais honesto que manter o pilar absoluto enquanto o gatilho o contradiz todo dia — **regra que a máquina desmente diariamente ensina que regra é decoração.** Vale só para este canal: qualquer outro deploy segue exigindo ato humano. Gates: banda MP-R1..6 + const-guard + hitl-registro + filosofia-gate. → `docs/governance/HITL_PROVENANCE_SPEC.md §6.0` + `docs/governance/LAYER_0_SSOT.md §4.5-4.8`.
 
+<!-- nucleo: sim -->
 ### P3 — REGRA VIRA GATE ⚙️ (meta-princípio)
 Filosofia sem gate é manifesto: regra nasce de incidente, ganha enforcement executável, calibra com evidência — nunca afrouxa por atrito. R-CONST-001: constituição = 2 cortes + texto nunca a subagente; **M1: gates/hooks SÃO lei** (mudar gate = mudança constitucional; emergência = fix já + CONST-DESIGN ≤48h). Instância melhorada promove sistema (SYSTEM-UP). **Regra não escapa por não se cadastrar (R-RULEMAP-COVERAGE-001, M1 2026-07-26):** o auditor de órfãs compara mapa→disco e nunca o inverso — `MODEL_DELEGATION_POLICY.md` era política viva e invisível ao enforcement. Medido: 12 dentro do mapa, **23 fora**, hoje em anistia declarada e contada em voz alta (§1.62). **Refatoração orgânica (R-REFACTOR-ORG-001):** motor/arquivo que cresce se quebra NO MEIO DO CAMINHO — incremental, golden a cada passo, extrai módulo comum com 2+ consumidores — nunca big-bang nem adiado; o gate code-size (600/1200, SSOT R3.4-CODE-SIZE-001) sinaliza QUANDO. Gates: const-guard (dispatch, cobre `.husky/`+hooks) + const-design-msg-check (commit) + rule-gate-map + system-up-advisory + code-size. → `~/.claude/CLAUDE.md §P3`.
 
+<!-- nucleo: sim -->
 ### P4 — DADO SOBERANO
 O motor viaja no git; o dado real nunca (R-SEC-002 [T0]: investigação/dado sob sigilo/PII jamais em git/nuvem/superfície pública). PII mascarada default · publicação e PUSH só pós-scan (R-SEC-005/008 — pre-push escaneia o range) · secret nunca ecoado (R-SEC-007) · motor separado do dado + golden sintético (R-PERSONAL-TO-PRODUCT). **Fronteira nunca depende da POSIÇÃO do nome num caminho (R-FRONTEIRA-INTRINSECA-001, M1 2026-07-26):** predicado é intrínseco ao dado (segmento, marcador, manifesto) — um `mv` desligou a fronteira soberana e vazaram 3 índices consultáveis, sem um aviso, porque mover pasta não roda teste. **MEDIDOR INFORMA, GUARDA FREIA (R-GUARDA-LIMITES-001, corte Enio 2026-07-31):** limite declarado em `INTEGRATION_REGISTRY §Guardas` **bloqueia** — prazo vencido, teto de gasto do mês estourado, ou pendência que porteia algo. Fato gerador: o período gratuito do Alibaba venceu, o uso continuou dias e a conta chegou em ~R$3.000 — e o kernel já tinha **8 medidores de custo**, 1 rodando sozinho, nenhum freando. **O freio mora onde o dinheiro sai — e o dinheiro sai por TODA porta que tem chave** (GUARDA-COBERTURA-001, 2026-07-31): a checagem fica na última linha antes do `fetch`, e em TODOS os arquivos que leem uma `*_API_KEY`. Medido: o freio nasceu em um só, e os outros dois roteadores — justamente os caminhos da Anthropic, API paga então sem teto — não tinham guarda nenhuma. **Freio numa porta de três é freio que se contorna sem saber.** Em roteador de *fallback* o freio **não lança**: bloqueado = tier **indisponível e dito**, porque um `catch`-fall-through engoliria a exceção e o bloqueio viraria silêncio. Teto é do **vendor**, vale inclusive no tier *free*. Preço desconhecido **nunca vira zero**. Bloqueio se desfaz sozinho ao estender o limite. Quem precisar de freio novo estende `§Guardas` — **não escreve o nono medidor**. Gates: gitleaks/audit-secrets/R-ENV-001/pii-hardblock + pre-push + sovereign-filter + sovereign-predicate-check (§1.59) + guard-brasil + scrub. → `docs/governance/ENV_DISCIPLINE.md` + `docs/INCIDENTS/INC-PII-001*`.
 
+<!-- nucleo: sim -->
 ### P5 — ENTENDER > PRODUZIR
 Complexidade sem entendimento se rejeita; problema sem sintoma não se resolve; muitas prioridades = nenhuma. Karpathy (mínimo código · assumptions primeiro · falhe visível) · requisitos mínimos ou PARAR · descubra-antes-de-criar (/discover + codebase-memory obrigatórios; ADOPT>rebuild) · capacidade nova = ≥3 golden (§R7) · anti-proliferação (R-DOC-BUDGET). **Fila tem teto e ROTAÇÃO AUTOMÁTICA (R-TASKS-FILA-001 + R-TASKS-ROTACAO-001, M1 2026-07-26):** o teto conta TASK ABERTA, não linha — medido: 65% das linhas do TASKS.md não eram task, e a unidade punia formatação (4609 chars numa linha contavam 1). P2/P3 parada 30d+ migra sozinha para o `ROADMAP.md`; P0/P1 e `gated:` nunca migram, porque prioridade parada é problema de prioridade e esconder no backlog maquiaria o que o gate deve expor. Faxina virou fluxo, não interrupção. **Diretório de coordenação tem TETO (R-COORD-CARDINALIDADE-001, M1 2026-07-26):** aviso não muda direção — formato muda. 14 handoffs onde o SSOT dizia 1; o PRIME_INBOX ficou 38 dias não-lido tendo sido resolvido em 2. O custo é de atenção, não de espaço. Gates: min-requirements + coruja + visual-proof + doc-proliferation + coord-cardinality (§1.61) + eval-runner. → `~/.claude/CLAUDE.md §P5` + §R7 abaixo.
 
 > **Reflexos pré-ação** (vivem no boot, exceção auditável do mapa — o dano acontece na conversa, antes de existir artefato): R-ARCH-001 (decisão de cliente nunca inferida) · R-DIAG-001 (diagnóstico antes de demo) · orquestração main-loop (braço → Agent com `model` explícito; Opus/Fable nunca subagente) · git destrutivo → bundle provado antes · pós-autocompact = mesma janela. → `~/.claude/CLAUDE.md §REFLEXOS`.
 <!-- BOOT-ABI:END section=pilares -->
 
+<!-- nucleo: kernel — mecanica de autoria da constituicao do Enio, nao lei -->
 ### 🧬 Blocos de autoria BOOT-ABI (MOV-1 etapa a — `docs/governance/CONSTITUTION_DEPENDENCY_MAP.md` §6)
 
 > FONTE DE AUTORIA da projeção global `~/.claude/CLAUDE.md` (gerador gen-boot-abi — nasce na etapa b; desenho: `docs/governance/CONSTITUTION_DEPENDENCY_MAP.md` §6.1). Texto = cópia fiel do global v6.0.0 em 2026-07-22 — conservação total, zero regra nova/alterada nesta etapa. Regra de edição: mudou aqui → regenerar a projeção; NUNCA editar o global à mão pós-etapa-d.
@@ -58,11 +65,13 @@ Complexidade sem entendimento se rejeita; problema sem sintoma não se resolve; 
 **ROTEAMENTO (onde vive a lei completa; lazy):** Precedência: `AGENTS.md` (regra de agente, versionado) > global > `.guarani` (vence em PROCESSO/orquestração); fail-closed: sem `~/.claude/egos-rules/` → avise antes de trabalho não-trivial. Corpo integral v5.8 (verbatim, nada apagado): `~/.claude/egos-rules/ops-discipline.md`. Lazy temáticos: karpathy-principles · posture-autonomy · session-checklist · red-zone-checklist · action-meta-cog · identity-and-method · regra-mae-egos · mcp-strategy · llm-routing · vocabulary · integrations · repo-map · doc-drift · db-discipline · enio-profile. Namespaces: T0 · P1-P5 · R0-R11 (`AGENTS.md`) · L0-N (`LAYER_0_SSOT.md`) · REGRA #N (domínio) · OVR-NNN. Mapa regra→gate: `egos/docs/governance/RULE_GATE_MAP.yaml` (zero-órfã no pre-commit). Incidentes-precedente: `egos/docs/INCIDENTS/INDEX.md`. Espelho versionado do global + hooks: `egos/.claude/global-mirror/` (drift-check no pre-commit).
 <!-- BOOT-ABI:END section=roteamento -->
 
+<!-- nucleo: sim -->
 ### Highest-Leverage Rule
 EGOS maximizes value when it turns proven operational capability into governed reusable infrastructure.
 Default path: prove in a real leaf or runtime → extract what is reusable → register canonical ownership → enforce evidence and eval → reduce replication cost for the next repo, agent, or client.
 When in doubt, prefer extraction over duplication, canon over parallel docs, and deploy traceability over informal runtime assumptions.
 
+<!-- nucleo: sim -->
 ### R0 — Critical non-negotiables (irreversible damage prevention)
 1. **NEVER `git push --force` to main/master/production** — use `bash scripts/safe-push.sh` (INC-001)
 2. **NEVER log/echo/commit secrets** — no `.env`, no hardcoded keys
@@ -70,12 +79,14 @@ When in doubt, prefer extraction over duplication, canon over parallel docs, and
 4. **NEVER `git add -A` in background agents** — always `git add <specific-file>` (INC-002)
 5. **COMMIT TASKS.md immediately** after edit (parallel agents lose uncommitted state)
 
+<!-- nucleo: sim -->
 ### R1 — Verification before assertion
 1. **Code claims** (function exists, caller count, import usage, dead code, route mapping) → `codebase-memory-mcp` is PRIMARY. Read/Grep is fallback for docs/config/markdown only. If `cbm-code-discovery-gate` hook fires, load MCP tools via ToolSearch; never bypass.
 2. **External LLM paste** (ChatGPT/Gemini/Grok/Kimi/Perplexity output) → every named feature, commit, file, version = UNVERIFIED CLAIM. Classify REAL/CONCEPT/PHANTOM via `git log --grep` + `Glob`. High-density buzzword lists (8+ capitalized "systems") = phantom signal (INC-005).
 3. **Subagent audits** (Agent/Explore/Plan outputs) = SYNTHESIS, not evidence. Before citing in commit/SSOT edit: re-verify top 3 structural claims via `codebase-memory-mcp`. Absolute audit claims ("X doesn't exist", "Y is skeleton") without file:line anchor = PHANTOM until verified (INC-006).
 4. **When spawning Agent/Explore/Plan** → prompt MUST include: "return evidence tuples `{claim, evidence_path, evidence_line}`; prefix unanchored with `UNVERIFIED:`".
 
+<!-- nucleo: sim -->
 ### R2 — SSOT integrity
 1. **Scored SSOT tables** (columns: `Compliance`/`Score`/`%`/`Coverage`/`Maturity`/`Readiness`/`Grade`) MUST be wrapped in `<!-- AUTO-GEN-BEGIN:<agent> -->` / `<!-- AUTO-GEN-END -->` populated by a compliance agent, OR every row MUST carry `VERIFIED_AT` + `method` + `evidence` (file:line or cmd output SHA). Handwritten scored tables are PHANTOM VECTORS. Pre-commit blocks after MSSOT-002 ships (INC-006).
 2. **Use-case scoped scoring** — before applying a uniform rubric across products, declare each product's primary use case. Mark rubric rows REQUIRED/OPTIONAL/N/A per use case. `N/A (use case: X)` is valid, not a fail. Cannot use single score column across heterogeneous use cases (INC-006).
@@ -89,6 +100,7 @@ When in doubt, prefer extraction over duplication, canon over parallel docs, and
    5. Grep similar em `egos/docs/CAPABILITY_REGISTRY.md` (kernel)
    Se 1+ existe → **ESTENDER (mesmo arquivo, nova section)**, não duplicar. Sprint cross-repo (kernel + leaf na mesma sessão) → criar entry `COORD-YYYY-MM-DD-X` em `egos/docs/COORDINATION.md` antes de qualquer commit. Postmortem: `docs/INCIDENTS/INC-009-leaf-silo-work.md`.
 
+<!-- nucleo: sim -->
 ### R3 — Edit safety
 1. Read before Edit (at least the relevant section). Confirm exact string. Re-read after edit.
 2. Max 3 edits per file before verification read.
@@ -99,11 +111,13 @@ When in doubt, prefer extraction over duplication, canon over parallel docs, and
 7. **State Assumptions First (Karpathy):** before implementing anything ambiguous, write out assumptions as a message or comment BEFORE writing code. If unclear, ask — don't guess silently.
 8. **Refatoração orgânica (R-REFACTOR-ORG-001, corte Enio 2026-07-22):** motor/arquivo que cresce se quebra NO MEIO DO CAMINHO — incremental, devagar, golden a cada passo, extraindo módulo comum quando há 2+ consumidores — nunca big-bang nem adiado. O item 4 (>LOC) tem gate `.husky/_checks/16-code-size.sh` (warn 600 / hard 1200, mede staged, avisa só quem cresce/cruza) que sinaliza QUANDO; a quebra acompanha o trabalho, não o interrompe. Audit repo-wide: `bun scripts/bloat-scan.ts`.
 
+<!-- nucleo: sim -->
 ### R4 — Git safety
 1. Force-push forbidden on main/master/production/prod/release/hotfix. Exception: `EGOS_ALLOW_FORCE_PUSH=1` in shell only.
 2. Always `bash scripts/safe-push.sh <branch>` (fetch+rebase+retry).
 3. `.husky/pre-push` blocks non-FF. Answer = `git fetch && git rebase`, never `--no-verify`.
 
+<!-- nucleo: condicional:multi-agente — so faz sentido com 2+ agentes na mesma arvore -->
 ### R5 — Context & swarm
 1. Use Agent tool when: 5+ files to read, >3 Glob/Grep rounds expected, research+implement needed. Don't spawn for single-file edits, git ops, known answers.
 2. Independent tasks → all agents in ONE message. Dependent → sequential.
@@ -112,6 +126,7 @@ When in doubt, prefer extraction over duplication, canon over parallel docs, and
 5. **Session checkpoint:** when pre-commit emits `[CHECKPOINT-NEEDED]` (turns≥10/commits≥15/elapsed≥90min), invoke `/checkpoint` (Hard Reset). Use `bun scripts/session-init.ts --status` to check. Never ignore [CHECKPOINT-NEEDED].
 6. **Concurrent windows on the same checkout → worktree from start, constitutional (not just suggestion).** `session-registry.ts check` detects another live session on the SAME checkout. If detected AND this session will write/commit AND its objective diverges from the others' → open with `claude --worktree <name>` BEFORE editing hotspots (TASKS.md/CLAUDE.md/AGENTS.md/.guarani). Exceptions (worktree cost > protection): single session · read-only/research mode · work in a separate repo · trivial single-file edit · work depending on `.env`/deploy-from-tree (worktree lacks `.env`, gitignored). Pre-commit ALREADY verifies and blocks a shared-index commit with 2+ live windows (`INDICE-COMPARTILHADO-001`, `.husky/pre-commit` §0.15) — that gate is the backstop; worktree is the cure. SSOT: `docs/governance/SWARM_COMMIT_POLICY.md §Multi-Window`.
 
+<!-- nucleo: kernel — a REGRA 'incidente vira regra' e universal e vive nos pilares; a LISTA de incidentes e historia do Enio -->
 ### R6 — Incident-driven (always load when relevant)
 | Incident | Rule |
 |---|---|
@@ -128,6 +143,7 @@ When in doubt, prefer extraction over duplication, canon over parallel docs, and
 
 Full postmortems: `docs/INCIDENTS/INC-XXX-*.md`. Index: `docs/INCIDENTS/INDEX.md`.
 
+<!-- nucleo: kernel — nasceu de incidente com o WhatsApp DO ENIO (INC-011) — protege ele, nao quem herda -->
 ### R-WPP-ACCESS-001 — Acesso a WhatsApp/Evolution API é sob demanda pontual (INC-011, 2026-07-27)
 
 **Regra (corte Enio):** Toda chamada a uma instância Evolution API (WhatsApp pessoal ou de negócio) precisa ser estritamente necessária pro pedido ATUAL do humano — nunca navegação exploratória ("já que estou aqui, vou olhar mais"). Escopo por padrão é o mais estreito possível: 1 grupo/conversa nomeada, nunca a conta inteira sem filtro (`findMessages`/`findChats` sem `remoteJid` = proibido por padrão). Atualizar dado que já foi lido (relistar "pra confirmar") sem pedido novo do humano é violação.
@@ -143,15 +159,18 @@ Full postmortems: `docs/INCIDENTS/INC-XXX-*.md`. Index: `docs/INCIDENTS/INDEX.md
 
 Memória de sessão relacionada (não-constitucional, contexto): `~/.claude/projects/.../memory/feedback-enio-limitar-acesso-evolution-api.md` e `project_evolution-whatsapp-pessoal-rate-limit.md`.
 
+<!-- nucleo: condicional:supabase — so com banco Supabase -->
 ### R-RLS-001 — Row-Level Security (INC-006, 2026-05-05)
 Every RLS policy MUST have explicit `TO <role>`. No `{public}` on sensitive tables (`users`, `*_keys`, `*_secrets`, `admin_*`). Validator: `scripts/security/rls-validator.ts`. Continuous auditor: `scripts/security/rls-auditor-comprehensive.ts` (VPS cron daily 2 AM UTC). Setup: `docs/jobs/SUPABASE_RLS_AUDIT_SETUP.md`. Override: `RLS-POLICY-OVERRIDE: <reason>`.
 
+<!-- nucleo: sim -->
 ### R-WIRE-001 — Componente ativo prova ativação (INTERCONNECT-RULE-P3-001, 2026-07-17)
 
 **Regra (corte Enio — direção sprint interconexão + desenho redação Codex, 2 cortes):** Todo componente `active` com trigger não-manual (gate/hook/cron/agente) DEVE ter **activation resolvível**, **canário comportamental** e **evidência de execução no SLA declarado**. Estados `manual/disabled/external/intentional-off` são explícitos e **NÃO** contam como dívida. Distingue 4 coisas que o sistema misturava: **declarado ≠ estaticamente-conectado ≠ realmente-disparado ≠ observado**. Aresta declarada-mas-desconectada = dívida; off-explícito = não.
 
 **Enforcement:** (a) HOJE, estático/real — `scripts/rule-gate-map.ts --enforce` wiring-check: entrada com `activation:` prova que o gate está fiado onde declara (bate com `.husky`/settings/crontab); zero-órfã já é gate duro no pre-commit. (b) STAGED, calibra com evidência (G2B behavioral) — canário que prova que o gate DISPARA (não só linkado) + evidência no SLA; liga `GUARDA-DECL-001` Slice B (M1). Nasce advisory, endurece com evidência (calibragem progressiva). **Origem:** investigação 2026-07-17 achou registries que mentem sobre wiring (`capability-scanner` declarava `pre_commit` sem estar fiado; `context-tracker`↔`context_tracker` caía em fallback silencioso). SSOT: `docs/governance/RULE_GATE_MAP.yaml`.
 
+<!-- nucleo: sim -->
 ### R7 — Behavioral eval required for claimed capabilities (INC-008, 2026-04-22)
 
 **Rule:** Any capability a system claims (in manifest, README, docs, CAPABILITY_REGISTRY, or `/api/*/discover` response) MUST have a **behavioral eval** proving it at runtime.
@@ -177,6 +196,7 @@ Every RLS policy MUST have explicit `TO <role>`. No `{public}` on sensitive tabl
 Full postmortem: `docs/INCIDENTS/INC-008-phantom-compliance-stubs.md`.
 Canonical eval strategy: `docs/knowledge/AI_EVAL_STRATEGY.md` (being written — see EVAL-X2).
 
+<!-- nucleo: condicional:banco — so com banco de dados -->
 ### R8 — DB Discipline (INC-DB-001 — 2026-05-22)
 
 > SSOT completo: `docs/governance/DB_DISCIPLINE.md`. Pre-commit enforcement: `scripts/pre-commit-db-discipline.sh`.
