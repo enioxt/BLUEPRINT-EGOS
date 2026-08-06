@@ -1,8 +1,9 @@
-# EGOS-KERNEL-PROPAGATED: 2026-08-03
+# EGOS-KERNEL-PROPAGATED: 2026-08-06
 <!-- AUTO-INJECTED by disseminate-propagator.ts — DO NOT EDIT THIS BLOCK MANUALLY -->
-<!-- Kernel commit: fd05e957 | 0 rule section(s) changed -->
+<!-- Kernel commit: 5bac7909 | 1 rule section(s) changed -->
 <!-- Source of rules: egos/AGENTS.md (canonical). Kernel-only authoritative copy: ~/.claude/CLAUDE.md -->
 <!-- Re-run: bun ~/egos/scripts/disseminate-propagator.ts --all to update -->
+<!-- ~ CLAUDE.md (2 lines) -->
 
 > ⚠️ **PROPAGATED FROM KERNEL** — Edits to this block are overwritten by next `bun governance:sync:exec`.
 > Edit kernel `egos/AGENTS.md` section between `<!-- PROPAGATE-RULES-BEGIN -->` and `<!-- PROPAGATE-RULES-END -->` instead.
@@ -27,7 +28,7 @@ Afirmação sem prova é inválida; nota sem régua é opinião. CONFIRMADO/INFE
 
 <!-- nucleo: sim -->
 ### P2 — HUMANO SOBERANO
-O performativo é humano: publicar/assinar/gastar/Red Zone = ato do Enio; pergunta chega como PCA (≤8 linhas, opções, critério de aceite — sem critério = inválida, §R10). Tríade: conferido·provado·assinado-por-humano (selo ③ executor: `scripts/hitl-registro.ts`). Nem analisar demais nem adiar demais (L0-11/L0-13). **EXCEÇÃO NOMEADA — `main → guard.egos.ia.br` é canal auto-aprovado (DEPLOY-AUTO-P2-001, corte Enio 2026-07-26, hash `285db32d4891`):** o push na main dispara `vps-deploy-guard-brasil.yml` e sobe sozinho. Aceito porque o deploy é **reversível**, tem health provado a cada subida e 3 gates antes dele; SLA de rollback: reverter o commit e re-pushar (o mesmo caminho, ~4min). Declarar a exceção é mais honesto que manter o pilar absoluto enquanto o gatilho o contradiz todo dia — **regra que a máquina desmente diariamente ensina que regra é decoração.** Vale só para este canal: qualquer outro deploy segue exigindo ato humano. Gates: banda MP-R1..6 + const-guard + hitl-registro + filosofia-gate. → `docs/governance/HITL_PROVENANCE_SPEC.md §6.0` + `docs/governance/LAYER_0_SSOT.md §4.5-4.8`.
+O performativo é humano: publicar/assinar/gastar/Red Zone = ato do Enio; pergunta chega como PCA (≤8 linhas, opções, critério de aceite — sem critério = inválida, §R10) **+ DOSSIÊ abaixo da régua: por que recomendo · exemplo no terreno dele · custo de não decidir (PCA-CHAT-002, corte 2026-08-06 — recomendação ausente invalida a PCA)**. Tríade: conferido·provado·assinado-por-humano (selo ③ executor: `scripts/hitl-registro.ts`). Nem analisar demais nem adiar demais (L0-11/L0-13). **EXCEÇÃO NOMEADA — `main → guard.egos.ia.br` é canal auto-aprovado (DEPLOY-AUTO-P2-001, corte Enio 2026-07-26, hash `285db32d4891`):** o push na main dispara `vps-deploy-guard-brasil.yml` e sobe sozinho. Aceito porque o deploy é **reversível**, tem health provado a cada subida e 3 gates antes dele; SLA de rollback: reverter o commit e re-pushar (o mesmo caminho, ~4min). Declarar a exceção é mais honesto que manter o pilar absoluto enquanto o gatilho o contradiz todo dia — **regra que a máquina desmente diariamente ensina que regra é decoração.** Vale só para este canal: qualquer outro deploy segue exigindo ato humano. Gates: banda MP-R1..6 + const-guard + hitl-registro + filosofia-gate. → `docs/governance/HITL_PROVENANCE_SPEC.md §6.0` + `docs/governance/LAYER_0_SSOT.md §4.5-4.8`.
 
 <!-- nucleo: sim -->
 ### P3 — REGRA VIRA GATE ⚙️ (meta-princípio)
@@ -212,7 +213,7 @@ Canonical eval strategy: `docs/knowledge/AI_EVAL_STRATEGY.md` (being written —
 
 **R11 — Regras propagáveis 2026-07-13 (resumo-com-link; corpo NUNCA copiado — o SSOT é a fonte) [T1 — corte Enio O2:a]:**
 1. **HITL × PCA:** HITL é o PORTÃO (onde o sistema para e QUEM decide — eixo, não severidade); PCA é a FORMA da pergunta no portão (opções letradas + recomendação + critério de aceite). Todo HITL estrutural se manifesta como PCA. → `egos/docs/governance/HITL_PROVENANCE_SPEC.md §6.0`
-2. **PCA-CHAT-001:** decisão que precisa do humano chega como pergunta de ≤8 linhas — opções letradas (respondível com 1 letra) + "Recomendo" + "Fecha quando" + link clicável real. Muro-de-prosa não é pergunta. → `§6.0.1`
+2. **PCA-CHAT-001/002:** decisão que precisa do humano chega como pergunta de ≤8 linhas — opções letradas (respondível com 1 letra) + "Recomendo" + "Fecha quando" + link clicável real. Muro-de-prosa não é pergunta. **E abaixo da régua vai o DOSSIÊ (PCA-CHAT-002, corte Enio 2026-08-06):** por que recomendo (com o número que sustenta) · exemplo prático **no terreno dele** (cliente/sócio/dinheiro/prazo antes de trabalho interno) · custo de não decidir. O bloco de cima decide sozinho; o dossiê é para quando a recomendação soar estranha. Recomendação ausente invalida a PCA como critério ausente. Várias → todas juntas, numeradas, respondíveis `"1a 2b 3c"`. → `§6.0.1` + `§6.0.2`
 3. **Tríade da Confiança:** todo output relevante carrega 3 selos — ① Conferido-contra-fontes ② Provado-na-origem ③ Assinado-por-humano. Em peça jurídica, o selo ③ é SEMPRE ato humano do subscritor, nunca carimbo. → `egos/docs/governance/LAYER_0_SSOT.md §4.8`
 4. **Calibragem progressiva:** todo gate/regra/filtro nasce máximo-restritivo (fail-closed), registra falso-positivos (telemetria) e calibra com evidência — cada calibragem AMPLIA o vocabulário da regra, nunca afrouxa por atrito. Calibragem é sempre decisão humana registrada. → `egos/docs/governance/EGOS_OPERATING_PRINCIPLES.md`
 
