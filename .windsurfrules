@@ -1,9 +1,9 @@
-# EGOS-KERNEL-PROPAGATED: 2026-08-06
+# EGOS-KERNEL-PROPAGATED: 2026-08-07
 <!-- AUTO-INJECTED by disseminate-propagator.ts — DO NOT EDIT THIS BLOCK MANUALLY -->
-<!-- Kernel commit: 5bac7909 | 1 rule section(s) changed -->
+<!-- Kernel commit: 1da6cf52 | 1 rule section(s) changed -->
 <!-- Source of rules: egos/AGENTS.md (canonical). Kernel-only authoritative copy: ~/.claude/CLAUDE.md -->
 <!-- Re-run: bun ~/egos/scripts/disseminate-propagator.ts --all to update -->
-<!-- ~ CLAUDE.md (2 lines) -->
+<!-- + CLAUDE.md (1 lines) -->
 
 > ⚠️ **PROPAGATED FROM KERNEL** — Edits to this block are overwritten by next `bun governance:sync:exec`.
 > Edit kernel `egos/AGENTS.md` section between `<!-- PROPAGATE-RULES-BEGIN -->` and `<!-- PROPAGATE-RULES-END -->` instead.
@@ -32,7 +32,7 @@ O performativo é humano: publicar/assinar/gastar/Red Zone = ato do Enio; pergun
 
 <!-- nucleo: sim -->
 ### P3 — REGRA VIRA GATE ⚙️ (meta-princípio)
-Filosofia sem gate é manifesto: regra nasce de incidente, ganha enforcement executável, calibra com evidência — nunca afrouxa por atrito. R-CONST-001: constituição = 2 cortes + texto nunca a subagente; **M1: gates/hooks SÃO lei** (mudar gate = mudança constitucional; emergência = fix já + CONST-DESIGN ≤48h). Instância melhorada promove sistema (SYSTEM-UP). **Regra não escapa por não se cadastrar (R-RULEMAP-COVERAGE-001, M1 2026-07-26):** o auditor de órfãs compara mapa→disco e nunca o inverso — `MODEL_DELEGATION_POLICY.md` era política viva e invisível ao enforcement. Medido: 12 dentro do mapa, **23 fora**, hoje em anistia declarada e contada em voz alta (§1.62). **Refatoração orgânica (R-REFACTOR-ORG-001):** motor/arquivo que cresce se quebra NO MEIO DO CAMINHO — incremental, golden a cada passo, extrai módulo comum com 2+ consumidores — nunca big-bang nem adiado; o gate code-size (600/1200, SSOT R3.4-CODE-SIZE-001) sinaliza QUANDO. Gates: const-guard (dispatch, cobre `.husky/`+hooks) + const-design-msg-check (commit) + rule-gate-map + system-up-advisory + code-size. → `~/.claude/CLAUDE.md §P3`.
+Filosofia sem gate é manifesto: regra nasce de incidente, ganha enforcement executável, calibra com evidência — nunca afrouxa por atrito. R-CONST-001: constituição = 2 cortes + texto nunca a subagente; **M1: gates/hooks SÃO lei** (mudar gate = mudança constitucional; emergência = fix já + CONST-DESIGN ≤48h). Instância melhorada promove sistema (SYSTEM-UP). **Regra não escapa por não se cadastrar (R-RULEMAP-COVERAGE-001, M1 2026-07-26):** o auditor de órfãs compara mapa→disco e nunca o inverso — `MODEL_DELEGATION_POLICY.md` era política viva e invisível ao enforcement. Medido: 12 dentro do mapa, **23 fora**, hoje em anistia declarada e contada em voz alta (§1.62). **E o mapa também não escapa por apontar para o lugar errado (R-RULEMAP-PONTEIRO-001, corte Enio 2026-08-06):** o `enforcement:` do `R-CI-2` errou o alvo **duas vezes em cinco semanas** e nada acusou — o arquivo citado existia, só não continha mais o passo. Ponteiro que resolve passa em qualquer revisão, e golden escrito contra ele testa o artefato errado e fica **verde para sempre**. Três camadas, cada uma contra um caso real: caminho morto · literal citado e ausente · `gate-hard` sem nenhuma saída ≠ 0 (§1.63, advisory). **Refatoração orgânica (R-REFACTOR-ORG-001):** motor/arquivo que cresce se quebra NO MEIO DO CAMINHO — incremental, golden a cada passo, extrai módulo comum com 2+ consumidores — nunca big-bang nem adiado; o gate code-size (600/1200, SSOT R3.4-CODE-SIZE-001) sinaliza QUANDO. Gates: const-guard (dispatch, cobre `.husky/`+hooks) + const-design-msg-check (commit) + rule-gate-map + system-up-advisory + code-size. → `~/.claude/CLAUDE.md §P3`.
 
 <!-- nucleo: sim -->
 ### P4 — DADO SOBERANO
