@@ -1,9 +1,10 @@
-# EGOS-KERNEL-PROPAGATED: 2026-08-07
+# EGOS-KERNEL-PROPAGATED: 2026-08-08
 <!-- AUTO-INJECTED by disseminate-propagator.ts — DO NOT EDIT THIS BLOCK MANUALLY -->
-<!-- Kernel commit: 1da6cf52 | 1 rule section(s) changed -->
+<!-- Kernel commit: 4ce223ec | 2 rule section(s) changed -->
 <!-- Source of rules: egos/AGENTS.md (canonical). Kernel-only authoritative copy: ~/.claude/CLAUDE.md -->
 <!-- Re-run: bun ~/egos/scripts/disseminate-propagator.ts --all to update -->
-<!-- + CLAUDE.md (1 lines) -->
+<!-- + CAPABILITY_REGISTRY.md (1 lines) -->
+<!-- + CAPABILITY_REGISTRY.md → ## §129 — /simplificar — Redução ao núcleo provado (2026-08-07) (44 lines) -->
 
 > ⚠️ **PROPAGATED FROM KERNEL** — Edits to this block are overwritten by next `bun governance:sync:exec`.
 > Edit kernel `egos/AGENTS.md` section between `<!-- PROPAGATE-RULES-BEGIN -->` and `<!-- PROPAGATE-RULES-END -->` instead.
@@ -20,7 +21,7 @@ This section is the single source of truth for agent rules. Claude Code reads th
 <!-- nucleo: sim — os 5 pilares SAO o nucleo — valem para qualquer profissao -->
 ### 🏛️ §PILARES — Layer 0 do EGOS (SSOT canônico; corte Enio PCA-PILARES-001:a, 2026-07-13)
 
-> Os 5 pilares são O QUE O EGOS É — todo repo, toda IDE, todo agente. Cada pilar carrega o gate que o executa; regra sem gate não desce de camada (mapa: `docs/governance/RULE_GATE_MAP.yaml`, zero-órfã enforced por `scripts/rule-gate-map.ts --enforce` no pre-commit). Corpo integral: `~/.claude/CLAUDE.md` v6 (espelho versionado: `.claude/global-mirror/CLAUDE.md`). Supersede o card "4 pilares TL;DR" de 2026-06-03.
+> Os 5 pilares são O QUE O EGOS É — todo repo, toda IDE, todo agente. Cada pilar carrega o gate que o executa; regra sem gate não desce de camada (mapa: `docs/governance/RULE_GATE_MAP.yaml`, zero-órfã enforced por `scripts/rule-gate-map.ts --enforce` no pre-commit). Corpo integral: `~/.claude/CLAUDE.md` — a versão é GERADA daqui por `bun scripts/gen-boot-abi.ts`; confira com `head -1 ~/.claude/CLAUDE.md`, nunca digite o número (espelho versionado: `.claude/global-mirror/CLAUDE.md`). Supersede o card "4 pilares TL;DR" de 2026-06-03.
 
 <!-- nucleo: sim -->
 ### P1 — VERDADE PROVADA
